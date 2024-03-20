@@ -28,6 +28,14 @@ const UsernameMenu = () => {
             User Profile
           </Link>
         </DropdownMenuItem>
+        <DropdownMenuItem className="my-2">
+          <Link
+            href={"/manage-restaurant"}
+            className="font-bold hover:text-orange-400"
+          >
+            Manage Restaurant
+          </Link>
+        </DropdownMenuItem>
         <Separator />
         <DropdownMenuItem>
           <Button

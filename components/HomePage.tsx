@@ -1,4 +1,4 @@
-import { HeroImg, Home1 } from "@/public/assets";
+import { MenuImage } from "@/public/assets";
 import Image from "next/image";
 import React from "react";
 
@@ -27,11 +27,11 @@ const HomePage = () => {
           </p>
         </div>
         <Image
-          className="md:w-1/2 object-cover"
-          src={Home1}
+          className="md:w-[40%] rounded-lg object-cover"
+          src={MenuImage}
           alt="Hero Image"
           width={1000}
-          height={1000}
+          height={500}
         />
       </div>
     </div>

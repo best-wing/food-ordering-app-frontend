@@ -2,6 +2,7 @@
 import { useGetMyUser, useUpdateMyUser } from "@/api/MyUserApi";
 import UserProfileForm from "@/components/forms/user-profile-form/UserProfileForm";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -13,7 +14,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      router.push('/');
+      router.push("/");
     }
   }, [isAuthenticated, isLoading, router]);
 
@@ -22,7 +23,11 @@ const UserProfile = () => {
   }
 
   if (isGetLoading || !isAuthenticated) {
-    return <span>Loading or not authenticated...</span>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader className="animate-spin" size={48} />
+      </div>
+    );
   }
 
   if (!currentUser) {
@@ -31,7 +36,11 @@ const UserProfile = () => {
 
   return (
     <div className="h-screen">
-      <UserProfileForm currentUser={currentUser} onSave={updateUser} isLoading={isUpdateLoading} />
+      <UserProfileForm
+        currentUser={currentUser}
+        onSave={updateUser}
+        isLoading={isUpdateLoading}
+      />
     </div>
   );
 };
