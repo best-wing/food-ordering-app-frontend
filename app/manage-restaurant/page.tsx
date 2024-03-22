@@ -16,7 +16,6 @@ const ManageRestaurant = () => {
   const { updateRestaurant, isLoading: isUpdateLoading } = useUpdateMyRestaurant();
   const isEditing = !!restaurant
 
-
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth0();
   const router = useRouter();
 
