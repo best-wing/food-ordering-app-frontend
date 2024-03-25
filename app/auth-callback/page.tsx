@@ -1,6 +1,6 @@
 "use client";
 import { userCreateMyUser } from "@/api/MyUserApi";
-import { useAuth0 } from "@auth0/auth0-react";
+import { AppState, useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Loader } from "lucide-react";
@@ -11,12 +11,12 @@ const AuthCallback = () => {
   const navigate = useRouter();
   const hasCreatedUser = useRef(false);
 
-  useEffect(() => {
+  useEffect((appState?: AppState) => {
     if (user?.sub && user?.email && !hasCreatedUser.current) {
       createUser({ auth0Id: user.sub, email: user.email });
       hasCreatedUser.current = true;
     }
-    navigate.push("/");
+    navigate.push(appState?.returnTo || "/");
   }, [createUser, navigate, user]);
 
   return (

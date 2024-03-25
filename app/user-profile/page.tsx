@@ -40,6 +40,7 @@ const UserProfile = () => {
         currentUser={currentUser}
         onSave={updateUser}
         isLoading={isUpdateLoading}
+        buttonText="Save Changes"
       />
     </div>
   );
