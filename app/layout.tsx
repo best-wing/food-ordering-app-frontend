@@ -27,7 +27,7 @@ export default function RootLayout({
           <Auth0ProviderWithNavigate>
             <Header />
             {children}
-            <Toaster visibleToasts={1} position="top-right" richColors  />
+            <Toaster visibleToasts={1} position="bottom-right" richColors  />
             <Footer />
           </Auth0ProviderWithNavigate>
         </ReactQueryProvider>

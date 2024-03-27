@@ -80,13 +80,12 @@ const DetailPage = () => {
   };
 
   const onCheckout = async (userFormData: UserFormData) => {
-    console.log("userFormData", userFormData);
-
     const checkoutData = {
       cartItems: cartItems.map((cartItem) => ({
         menuItemId: cartItem._id,
         name: cartItem.name,
-        quantity: cartItem.quantity.toString()
+        quantity: cartItem.quantity.toString(),
+        price: (cartItem.price * cartItem.quantity / 100).toFixed(2),
       })),
       restaurantId: restaurant?._id,
       deliveryDetails: {

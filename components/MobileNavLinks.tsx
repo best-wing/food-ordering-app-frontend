@@ -7,6 +7,12 @@ const MobileNavLinks = () => {
     const { logout, user } = useAuth0();
   return (
     <div>
+      <Link href={'/order-status'} className='flex mb-2 bg-white items-center font-bold hover:text-orange-500'>
+        Order Status 
+      </Link>
+      <Link href={'/manage-restaurant'} className='flex mb-2 bg-white items-center font-bold hover:text-orange-500'>
+        My Restaurant 
+      </Link>
       <Link href={'/user-profile'} className='flex mb-2 bg-white items-center font-bold hover:text-orange-500'>
         User Profile 
       </Link>
