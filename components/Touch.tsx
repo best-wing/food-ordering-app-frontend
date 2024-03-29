@@ -29,7 +29,7 @@ const Touch = () => {
       <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">Delicious Food</p>
       <h1 className="text-3xl font-bold my-5">Get in Touch</h1>
       <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
-        We're here to answer any questions you may have.
+        We&apos;re here to answer any questions you may have.
       </p>
       <div className="flex justify-between flex-col md:flex-row">
         {contactInfo.map(({ Icon, title, description, contact }, index) => (

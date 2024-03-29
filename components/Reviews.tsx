@@ -24,7 +24,7 @@ const Reviews = () => {
     <div className="p-10 lg:p-20">
       <h1 className="text-3xl font-bold">Customer Reviews</h1>
       <p className="mt-5 mb-10 text-1xl">
-        Read what our satisfied users and restaurants have to say about BiteZ's service.
+        Read what our satisfied users and restaurants have to say about BiteZ&apos;s service.
       </p>
       <div className="flex justify-between gap-10 flex-col md:flex-row">
         {reviews.map((review, index) => (

@@ -42,7 +42,7 @@ const Hero = () => {
             </h1>
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
               With BiteZ, embark on a culinary journey across the globe without
-              leaving your house. We've partnered with authentic restaurants
+              leaving your house. We&apos;ve partnered with authentic restaurants
               from various countries to offer you an unparalleled selection of
               international dishes. Dive into a new culture with every meal and
               join our global community of food lovers today.

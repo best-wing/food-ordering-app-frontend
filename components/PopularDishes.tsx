@@ -37,7 +37,7 @@ const PopularDishes = () => {
           </h1>
           <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[70%]">
             With BiteZ, you can easily order your favorite food from local
-            restaurants. Simply browse, select, and checkout. It's that simple!
+            restaurants. Simply browse, select, and checkout. It&apos;s that simple!
           </p>
           <ul className="text-[0.8rem] md:text-[1rem] text-muted-foreground flex flex-col md:flex-row gap-5">
             <li className="flex flex-col gap-2">
@@ -86,7 +86,7 @@ const PopularDishes = () => {
               Discover the Best Food in Town
             </h1>
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
-              At BiteZ, we've partnered with the finest restaurants to bring you
+              At BiteZ, we&apos;ve partnered with the finest restaurants to bring you
               a wide variety of delicious dishes. Join our community of happy
               customers and start ordering your favorite food today.
             </p>
