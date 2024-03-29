@@ -30,8 +30,8 @@ const Faq = () => {
           <AccordionContent className="w-[80%]">
             Ordering international cuisine on BiteZ is simple! Browse our
             extensive list of restaurants offering dishes from around the world.
-            Once you've found something you'd like to try, select the dish, add
-            it to your cart, and proceed to checkout. We'll handle the rest,
+            Once you&apos;ve found something you&apos;d like to try, select the dish, add
+            it to your cart, and proceed to checkout. We&apos;ll handle the rest,
             ensuring your food arrives fresh and as quickly as possible.
           </AccordionContent>
         </AccordionItem>
@@ -40,11 +40,11 @@ const Faq = () => {
             I own a restaurant. How can I list my cuisine on BiteZ?
           </AccordionTrigger>
           <AccordionContent className="w-[80%]">
-            We're thrilled to have you onboard! To list your restaurant and
+            We&apos;re thrilled to have you onboard! To list your restaurant and
             cuisine on BiteZ, create an account on our platform, then follow the
-            instructions to add your restaurant's name, location, available
+            instructions to add your restaurant&apos;s name, location, available
             cuisines, and images of your dishes. Once your submission is
-            reviewed and approved by our team, you'll start appearing in
+            reviewed and approved by our team, you&apos;ll start appearing in
             searches on our site.
           </AccordionContent>
         </AccordionItem>
@@ -55,7 +55,7 @@ const Faq = () => {
           <AccordionContent className="w-[80%]">
             BiteZ specializes in offering a diverse array of international
             cuisines, directly connecting food enthusiasts with authentic dishes
-            from around the globe. Whether you're craving Italian pasta,
+            from around the globe. Whether you&apos;re craving Italian pasta,
             Japanese sushi, or Indian curry, BiteZ brings the world to your
             doorstep. Additionally, our platform supports local restaurants
             worldwide, enabling them to reach a wider audience.
@@ -68,7 +68,7 @@ const Faq = () => {
           <AccordionContent className="w-[80%]">
             BiteZ partners with a network of delivery services to ensure timely
             and safe delivery of your food. Depending on your location and the
-            restaurant's proximity, we select the best delivery option to
+            restaurant&apos;s proximity, we select the best delivery option to
             maintain the quality and warmth of your order.
           </AccordionContent>
         </AccordionItem>
@@ -79,7 +79,7 @@ const Faq = () => {
           <AccordionContent className="w-[80%]">
             Yes, you can! BiteZ makes it easy to treat friends or family to
             delicious meals, no matter where they are. Simply enter the
-            recipient's address during checkout, and we'll take care of
+            recipient&apos;s address during checkout, and we&apos;ll take care of
             delivering your thoughtful gift right to their door.
           </AccordionContent>
         </AccordionItem>
@@ -89,7 +89,7 @@ const Faq = () => {
           </AccordionTrigger>
           <AccordionContent className="w-[80%]">
             Our customer support team is always here to help! For any inquiries,
-            concerns, or feedback, please visit our 'Contact Us' page. You can
+            concerns, or feedback, please visit our Contact Us page. You can
             reach us through our support email, phone, or live chat. We strive
             to respond to all queries promptly and efficiently.
           </AccordionContent>

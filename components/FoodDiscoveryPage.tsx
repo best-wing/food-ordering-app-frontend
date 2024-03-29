@@ -54,10 +54,10 @@ const FoodDiscoveryPage = () => {
             Explore Our Menu and Savor the Flavors
           </h1>
           <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[90%]">
-            Dive into BiteZ's diverse menu, featuring a cornucopia of dishes
+            Dive into BiteZ&apos;s diverse menu, featuring a cornucopia of dishes
             from the finest local eateries. Our platform makes it easy for you
             to explore, customize, and enjoy the gastronomic delights that await
-            you. Here's how you can embark on a culinary journey with just a few
+            you. Here&apos;s how you can embark on a culinary journey with just a few
             clicks:
           </p>
           <div className="text-[0.8rem] md:text-[1rem] text-muted-foreground flex flex-col gap-y-3 w-full">
@@ -82,7 +82,7 @@ const FoodDiscoveryPage = () => {
                   Tailor to Your Taste:
                 </span>
                 Customize your order to match your taste preferences—whether
-                it's adding extra toppings, choosing the level of spice, or
+                it&apos;s adding extra toppings, choosing the level of spice, or
                 selecting side dishes, make each meal uniquely yours.
               </p>
             </div>
@@ -94,7 +94,7 @@ const FoodDiscoveryPage = () => {
                 <span className="text-1xl font-bold text-[#222]">
                   Indulge in Your Favorites:
                 </span>
-                With your order tailored and placed, all that's left is to relax
+                With your order tailored and placed, all that&apos;s left is to relax
                 and anticipate the arrival of your delicious, carefully prepared
                 meal. Get ready to indulge in a dining experience like no other!
               </p>
