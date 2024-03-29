@@ -16,6 +16,12 @@ const OrderStatusDetail = ({ order }: Props) => {
             <span className="font-bold text-[#11142D]">Name:</span>{" "}
             {order.deliveryDetails.name}
           </span>
+          {order.status === "outForDelivery" || order.status === "delivered" ? (
+            <span className="text-[1rem] text-[#727272]">
+              <span className="font-bold text-[#11142D]">Order id:</span>{" "}
+              {order._id}
+            </span>
+          ) : null}
           <span className="text-[1rem] text-[#727272]">
             <span className="font-bold text-[#11142D]">Address:</span>{" "}
             {order.deliveryDetails.addressLine1}

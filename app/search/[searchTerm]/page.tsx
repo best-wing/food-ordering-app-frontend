@@ -75,12 +75,15 @@ const SearchPage = () => {
     );
   }
   if (!results?.data || !searchTerm) {
-    return <span>No results found</span>;
+    return <div className="h-screen flex flex-col items-center justify-center bg-gray-50">
+      <h1 className="text-4xl font-bold ">No results found</h1>
+      <p className="text-1xl text-center">Location available now are UK, Spain, Greece, Germany</p>
+    </div>;
   }
 
   return (
     <div
-      className={`container justify-center py-10 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-20 ${
+      className={`container justify-center bg-gray-50 py-10 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-20 ${
         results.pagination.total < 3 ? "h-screen" : "h-full"
       }`}
     >

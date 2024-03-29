@@ -1,11 +1,12 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useEffect } from "react";
+import { Link } from "react-scroll";
+import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem } from "./ui/form";
 import { Search } from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
   searchQuery: z.string({
@@ -30,8 +31,29 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
     },
   });
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleScroll = () => {
+    if (inputRef.current && isElementInViewport(inputRef.current)) {
+      inputRef.current.focus();
+    }
+  };
+
+  // Helper function to check if an element is in the viewport
+  const isElementInViewport = (el: HTMLElement) => {
+    const rect = el.getBoundingClientRect();
+    return !(
+      rect.top > window.innerHeight ||
+      rect.left < 0 ||
+      rect.bottom < 0 ||
+      rect.right > window.innerWidth
+    );
+  };
+
   useEffect(() => {
     form.reset({ searchQuery });
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [form, searchQuery]);
 
   const handleReset = () => {
@@ -64,6 +86,7 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
               <FormControl>
                 <Input
                   {...field}
+                  ref={inputRef}
                   className="border-none shadow-none md:text-xl focus-visible:ring-0 p-2 md:p-3"
                   placeholder={placeHolder}
                 />

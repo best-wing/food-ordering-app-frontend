@@ -1,0 +1,93 @@
+.main{  
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    .title{
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 18px;
+        h1{
+            font-weight: 400;
+            color: white;
+            margin: 0px;
+            text-align: center;
+        }
+        p{
+            color: rgb(226, 226, 226);
+            margin: 0px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+    .plane{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        img{
+            position: absolute;
+        }
+        &:nth-of-type(1){
+            filter: brightness(0.7);
+            img{
+                &:nth-of-type(1){
+                    left:70%;
+                    top: 10%;
+                }
+                &:nth-of-type(2){
+                    left: 0%;
+                    top: 45%;
+                }
+                &:nth-of-type(3){
+                    left: 0%;
+                    top: 0%;
+                }
+            }
+        }
+        &:nth-of-type(2){
+            filter: brightness(0.6);
+            img{
+                &:nth-of-type(1){
+                    left: 35%;
+                    top: 10%;
+                }
+                &:nth-of-type(2){
+                    left: 20%;
+                    top: 5%;
+                }
+                &:nth-of-type(3){
+                    left: 25%;
+                    top: 60%;
+                }
+            }
+        }
+        &:nth-of-type(3){
+            filter: brightness(0.5);
+            img{
+                &:nth-of-type(1){
+                    left: 60%;
+                    top: 2.5%;
+                }
+                &:nth-of-type(2){
+                    left: 60%;
+                    top: 40%;
+                }
+            }
+        }
+        &:nth-of-type(4){
+            filter: brightness(0.5);
+            img{
+                &:nth-of-type(1){
+                    left: 85%;
+                    top: 2.5%;
+                }
+                &:nth-of-type(2){
+                    left: 85%;
+                    top: 50%;
+                }
+            }
+        }
+    }
+}
