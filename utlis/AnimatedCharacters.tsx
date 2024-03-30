@@ -18,58 +18,70 @@ const AnimatedCharacters: React.FC<AnimatedCharactersProps> = ({ text, type, cla
   const ref = useRef<HTMLParagraphElement | HTMLHeadingElement | null>(null);
 
   useEffect(() => {
+    // A boolean flag to know if the component is still mounted.
+    let isMounted = true;
+  
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && isMounted) {
           controls.start('visible');
         }
       },
       { root: null, threshold: 0.1 }
     );
-
+  
     if (ref.current) {
       observer.observe(ref.current);
     }
-
+  
     return () => {
+      isMounted = false;
       observer.disconnect();
     };
   }, [controls]);
 
   const item = {
-    hidden: { y: '100%', opacity: 0, translateX: -50 },
-    visible: {
+    hidden: { y: '100%', opacity: 0 },
+    visible: (i: number) => ({
       y: 0,
       opacity: 1,
-      translateX: 0,
-      transition: { delay: 0.03, duration: 0.8, ease: 'backOut' },
-    },
+      transition: { delay: i * 0.03, duration: 0.8, ease: 'backOut' },
+    }),
   };
-
-  const words = text.split(' ').map((word) => [...word.split(''), '\u00A0']); // Include space after each word
 
   const Tag = tagMap[type];
 
-  // Use React.createElement to dynamically create the HTML tag
+  // Calculate a delay offset based on character index across the whole text
+  let delayOffset = 0;
+
   return React.createElement(
     Tag,
-    { className, ref },
-    words.map((word, wordIndex) => (
-      <span key={wordIndex} style={{ display: 'inline-block', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-        {word.map((char, charIndex) => (
-          <motion.span
-            key={charIndex}
-            variants={item}
-            initial="hidden"
-            animate={controls}
-            custom={wordIndex + charIndex / 100} // Custom delay for staggering effect
-            style={{ display: 'inline-block' }}
-          >
-            {char}
-          </motion.span>
-        ))}
-      </span>
-    ))
+    { className, ref, style: { overflow: 'hidden' } }, // Apply overflow hidden to prevent word breaking due to container constraints
+    text.split(' ').map((word, wordIndex) => {
+      return (
+        <React.Fragment key={wordIndex}>
+          <span style={{ display: 'inline-block' }}>
+            {word.split('').map((char, charIndex) => {
+              const totalIndex = delayOffset + charIndex;
+              return (
+                <motion.span
+                  key={charIndex}
+                  variants={item}
+                  initial="hidden"
+                  animate={controls}
+                  custom={totalIndex} // Stagger based on the total index across the full text
+                  style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </span>
+          {/* Add a non-breaking space after each word */}
+          {wordIndex < text.length - 1 && <span style={{ whiteSpace: '' }}>&nbsp;</span>}
+        </React.Fragment>
+      );
+    })
   );
 };
 

@@ -97,3 +97,10 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.animated-text {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}

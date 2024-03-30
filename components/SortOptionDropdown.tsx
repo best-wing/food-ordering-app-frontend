@@ -18,6 +18,10 @@ const SORT_OPTIONS = [
     value: "bestMatch",
   },
   {
+    label: "Latest updated",
+    value: "lastUpdated",
+  },
+  {
     label: "Delivery price",
     value: "deliveryPrice",
   },

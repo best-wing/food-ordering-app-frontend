@@ -39,9 +39,9 @@ const AboutUs = () => {
               Bringing the World to Your Table
             </h1>
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
-              At BiteZ, we're more than just a food delivery service; we're a
+              At BiteZ, we&apos;re more than just a food delivery service; we&apos;re a
               gateway to global cuisine. Founded on the belief that food is a
-              language that transcends borders, we're dedicated to connecting
+              language that transcends borders, we&apos;re dedicated to connecting
               you with authentic culinary experiences from around the world. Our
               platform is a vibrant community of food enthusiasts, explorers,
               and passionate restaurant partners. Join us as we make discovering
@@ -65,9 +65,9 @@ const AboutUs = () => {
             />
             <h3 className="text-1xl font-bold my-2">Discover</h3>
             <p className="text-1xl text-muted-foreground">
-              BiteZ opens a door to the world's cuisines, directly from our
+              BiteZ opens a door to the world&apos;s cuisines, directly from our
               homepage. Explore our vast selection of restaurants offering
-              dishes from across the globe. Whether you're craving something
+              dishes from across the globe. Whether you&apos;re craving something
               familiar or looking to try something new, our easy-to-navigate
               platform makes finding your next meal a breeze. Just browse or use
               our search to start your culinary adventure.
@@ -84,7 +84,7 @@ const AboutUs = () => {
             <p className="text-1xl text-muted-foreground">
               Found something that tickles your taste buds? Add it to your cart
               with a tap. Our checkout process is streamlined for ease - review
-              your order, select your payment method, and confirm. We'll handle
+              your order, select your payment method, and confirm. We&apos;ll handle
               the rest, ensuring your food is prepared, packed, and delivered
               with care, keeping you updated every step of the way.
             </p>
@@ -99,8 +99,8 @@ const AboutUs = () => {
             <h3 className="text-1xl font-bold my-2">Enjoy</h3>
             <p className="text-1xl text-muted-foreground">
               Once your order is placed, sit back and get ready for a culinary
-              delight. Track your order's progress from the kitchen to your
-              doorstep in real-time. BiteZ's partnership with dedicated delivery
+              delight. Track your order&apos;s progress from the kitchen to your
+              doorstep in real-time. BiteZ&apos;s partnership with dedicated delivery
               partners ensures your food arrives as fresh as it leaves the
               restaurant, bringing the joy and flavors of the world right to
               your table.
