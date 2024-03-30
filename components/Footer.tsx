@@ -46,27 +46,27 @@ const Footer = () => {
 
   return (
     <div className="container pt-20 lg:px-20 md:px-10 xs:px-5 font-Cairo dark:bg-[#11161b]">
-      <div className="flex justify-between md:items-center xs:flex-col md:flex-row">
+      <div className="flex justify-between md:items-center flex-col gap-6 md:flex-row">
         <div>
           <div className="mb-5">
-            <h1>BiteZ.com</h1>
+            <h1 className="text-4xl font-bold text-orange-500">BiteZ.com</h1>
           </div>
           <div className="mb-5">
             <h1 className="font-bold text-[#2F4F4F] dark:text-white md:text-[30px] lg:text-[17px] xl:text-[22px]">
               Address:
             </h1>
-            <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3]">
-              123 Main Street, Anytown, USA
+            <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3] underline">
+              123 Main St, Sydney NSW 2000, Australia
             </p>
           </div>
           <h1 className="font-bold text-[#2F4F4F] dark:text-white md:text-[30px] lg:text-[17px] xl:text-[22px]">
             Contact:
           </h1>
           <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3]">
-            555-123-4567
+            +1 (555) 123-4567
           </p>
           <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3]">
-            info@test.com
+            hello@bitez.com
           </p>
           <div className="flex gap-x-5 mt-5">
             {socialIcons.map((Icon, index) => (
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex lg:gap-x-32 md:gap-x-10 lg:mr-20 xs:flex-col md:flex-row xs:mt-10 gap-y-5">
+        <div className="flex lg:gap-x-32 md:gap-x-10 lg:mr-20 flex-col md:flex-row xs:mt-10 gap-y-5">
           {footerLinks.map((section, index) => (
             <ul key={index} className="flex flex-col gap-y-3">
               <li className="font-bold text-[#222] dark:text-white md:text-[20px] lg:text-[17px] xl:text-[22px]">
@@ -99,7 +99,7 @@ const Footer = () => {
       </div>
       <hr className="mt-20" />
       <div className="flex justify-between w-full xs:flex-col md:flex-row md:items-center py-10 gap-y-3">
-        <p className="md:text-[16px] xs:text-[12px] sm:text-[13px] text-[#222] dark:text-[#d3d3d3] cursor-pointer underline underline-offset-2">
+        <p className="md:text-[16px] xs:text-[12px] sm:text-[13px] text-[#222] dark:text-[#d3d3d3] cursor-pointer">
           © 2024 BiteZ. All rights reserved.
         </p>
         <div className="flex gap-x-5">

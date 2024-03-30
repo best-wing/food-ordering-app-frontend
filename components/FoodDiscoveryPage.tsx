@@ -7,11 +7,14 @@ import { AspectRatio } from "./ui/aspect-ratio";
 import { ChefHat } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Separator } from "./ui/separator";
-import { Link } from "react-scroll";
+import { Link as Navigate } from "react-scroll";
+import Link from "next/link";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
+import TransitionLink from "./TransitionLink";
 
 const FoodDiscoveryPage = () => {
   const router = useRouter();
-  const { isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
   const handleSearchSubmit = (searchFormValues: SearchForm) => {
     router.push(`/search/${searchFormValues.searchQuery}`);
   };
@@ -36,7 +39,10 @@ const FoodDiscoveryPage = () => {
 
   return (
     <main className="flex flex-col gap-12 items-center">
-      <div id="order" className="bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center mt-10 px-5 md:px-20 w-full md:w-[80%] lg:w-1/2">
+      <div
+        id="order"
+        className="bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center mt-10 px-5 md:px-20 w-full md:w-[80%] lg:w-1/2"
+      >
         <h1 className="md:text-4xl text-3xl font-bold tracking-tight text-orange-600">
           Indulge in Your Favorite Meal Today
         </h1>
@@ -50,15 +56,17 @@ const FoodDiscoveryPage = () => {
       </div>
       <div className="container flex gap-10 flex-wrap lg:flex-nowrap lg:px-20 justify-between">
         <div className="flex flex-col justify-center gap-4 lg:w-[50%]">
-          <h1 className="text-2xl md:text-4xl font-bold w-[80%]">
-            Explore Our Menu and Savor the Flavors
-          </h1>
+          <AnimatedCharacters
+            className="text-2xl md:text-4xl font-bold w-[80%]"
+            text="Explore Our Menu and Savor the Flavors"
+            type="heading1"
+          />
           <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[90%]">
-            Dive into BiteZ&apos;s diverse menu, featuring a cornucopia of dishes
-            from the finest local eateries. Our platform makes it easy for you
-            to explore, customize, and enjoy the gastronomic delights that await
-            you. Here&apos;s how you can embark on a culinary journey with just a few
-            clicks:
+            Dive into BiteZ&apos;s diverse menu, featuring a cornucopia of
+            dishes from the finest local eateries. Our platform makes it easy
+            for you to explore, customize, and enjoy the gastronomic delights
+            that await you. Here&apos;s how you can embark on a culinary journey
+            with just a few clicks:
           </p>
           <div className="text-[0.8rem] md:text-[1rem] text-muted-foreground flex flex-col gap-y-3 w-full">
             <div className="flex gap-1">
@@ -94,20 +102,21 @@ const FoodDiscoveryPage = () => {
                 <span className="text-1xl font-bold text-[#222]">
                   Indulge in Your Favorites:
                 </span>
-                With your order tailored and placed, all that&apos;s left is to relax
-                and anticipate the arrival of your delicious, carefully prepared
-                meal. Get ready to indulge in a dining experience like no other!
+                With your order tailored and placed, all that&apos;s left is to
+                relax and anticipate the arrival of your delicious, carefully
+                prepared meal. Get ready to indulge in a dining experience like
+                no other!
               </p>
             </div>
           </div>
           <div className="flex gap-5">
-            <Link smooth={true} duration={500} to="order">
+            <Navigate smooth={true} duration={500} to="order">
               <Button>Order</Button>
-            </Link>
+            </Navigate>
             {isAuthenticated ? (
               <Button>Log Out</Button>
             ) : (
-              <Button>Sign in</Button>
+              <Button onClick={() => loginWithRedirect()}>Sign in</Button>
             )}
           </div>
         </div>
@@ -126,18 +135,24 @@ const FoodDiscoveryPage = () => {
         {listContent.map((item, index) => (
           <div key={index} className="flex flex-col gap-5">
             <ChefHat className="text-orange-500" size={25} />
-            <h1 className="text-2xl lg:text-3xl font-bold">{item.title}</h1>
+            <AnimatedCharacters
+              className="text-2xl lg:text-3xl font-bold"
+              text={item.title}
+              type="heading1"
+            />
             <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
               {item.description}
             </p>
-            <div className="flex gap-5">
-              <Button>Learn More</Button>
+            <div className="flex gap-5 mt-auto">
+              <TransitionLink href="/about-us">
+                <Button>Learn More</Button>
+              </TransitionLink>
               {isAuthenticated ? (
-                <Link smooth={true} duration={500} to="order">
+                <Navigate smooth={true} duration={500} to="order">
                   <Button>Order</Button>
-                </Link>
+                </Navigate>
               ) : (
-                <Button>Sign in</Button>
+                <Button onClick={() => loginWithRedirect()}>Sign in</Button>
               )}
             </div>
           </div>

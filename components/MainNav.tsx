@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import Link from "next/link";
 import {
@@ -11,6 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import { usePathname } from "next/navigation";
+import TransitionLink from "./TransitionLink";
 
 const navLinks = [
   {
@@ -24,7 +24,7 @@ const navLinks = [
 ];
 
 const MainNav = () => {
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
   const countryPaths = [
@@ -40,9 +40,9 @@ const MainNav = () => {
       {isAuthenticated ? (
         <div className="flex items-center">
           {navLinks.map(({ href, label = "" }) => (
-            <Link
+            <TransitionLink
               key={href}
-              href={href}
+              href={href} 
               className={`${
                 isActive(href)
                   ? "text-[#000] dark:text-white"
@@ -50,9 +50,9 @@ const MainNav = () => {
               } font-bold hover:text-orange-500 mr-5`}
             >
               {label}
-            </Link>
+            </TransitionLink>
           ))}
-          <Link
+          <TransitionLink
             href="/user-profile"
             className={`${
               isActive("/user-profile")
@@ -61,7 +61,7 @@ const MainNav = () => {
             } font-bold hover:text-orange-500`}
           >
             Profile
-          </Link>
+          </TransitionLink>
         </div>
       ) : null}
       <NavigationMenu>

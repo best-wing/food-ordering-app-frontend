@@ -3,8 +3,11 @@ import { Dishes } from "@/public/assets";
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
-import { Link } from "react-scroll";
+import { Link as Navigate } from "react-scroll";
+import Link from "next/link";
 import { useAuth0 } from "@auth0/auth0-react";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
+import TransitionLink from "./TransitionLink";
 
 type Props = {
   percentage: string;
@@ -12,12 +15,16 @@ type Props = {
 };
 
 const Hero = () => {
-  const { isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
   const StatCard = ({ percentage, label }: Props) => (
     <div className="flex-1 flex gap-3">
       <div className="h-20 bg-white" style={{ width: "2px" }} />
-      <div className="flex flex-col gap-y-5">
-        <h1 className="text-4xl font-bold text-[#fff]">{percentage}%</h1>
+      <div className="flex flex-col gap-y-5">        
+        <AnimatedCharacters
+          className="text-4xl font-bold text-[#fff]"
+          text={`${percentage}%`}
+          type="heading1"
+        />
         <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]">{label}</p>
       </div>
     </div>
@@ -34,12 +41,16 @@ const Hero = () => {
         />
         <div className="flex relative p-10 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center items-center">
           <div className="flex flex-col gap-y-5">
-            <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]">
-              Delicious
-            </p>
-            <h1 className="text-3xl font-bold text-[#fff]">
-              Explore World Cuisines from Your Home
-            </h1>
+            <AnimatedCharacters
+              className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]"
+              text="Delicious"
+              type="paragraph"
+            />
+            <AnimatedCharacters
+              className="text-3xl font-bold text-[#fff]"
+              text="Explore World Cuisines from Your Home"
+              type="heading1"
+            />
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
               With BiteZ, embark on a culinary journey across the globe without
               leaving your house. We&apos;ve partnered with authentic restaurants
@@ -47,15 +58,16 @@ const Hero = () => {
               international dishes. Dive into a new culture with every meal and
               join our global community of food lovers today.
             </p>
-
             <div className="flex gap-5">
-              <Button>Learn More</Button>
+              <TransitionLink href="/about-us">
+                <Button>Learn More</Button>
+              </TransitionLink>
               {isAuthenticated ? (
-                <Link smooth={true} duration={500} to="order">
+                <Navigate smooth={true} duration={500} to="order">
                   <Button>Order</Button>
-                </Link>
+                </Navigate>
               ) : (
-                <Button>Sign in</Button>
+                <Button onClick={() => loginWithRedirect()}>Sign in</Button>
               )}
             </div>
           </div>

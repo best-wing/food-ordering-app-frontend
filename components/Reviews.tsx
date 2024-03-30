@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { IoStar } from "react-icons/io5";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
 const reviews = [
   {
@@ -22,10 +24,16 @@ const reviews = [
 const Reviews = () => {
   return (
     <div className="p-10 lg:p-20">
-      <h1 className="text-3xl font-bold">Customer Reviews</h1>
+      <AnimatedCharacters
+        className="text-3xl font-bold"
+        text="Customer Reviews"
+        type="heading1"
+      />
       <p className="mt-5 mb-10 text-1xl">
-        Read what our satisfied users and restaurants have to say about BiteZ&apos;s service.
+        Read what our satisfied users and restaurants have to say about
+        BiteZ&apos;s service.
       </p>
+
       <div className="flex justify-between gap-10 flex-col md:flex-row">
         {reviews.map((review, index) => (
           <div className="flex flex-col gap-5" key={index}>
@@ -40,9 +48,7 @@ const Reviews = () => {
             <div className="flex gap-2 md:gap-5 items-center">
               <div className="flex gap-2">
                 <Avatar>
-                  <AvatarFallback>
-                    {review.avatarLetters}
-                  </AvatarFallback>
+                  <AvatarFallback>{review.avatarLetters}</AvatarFallback>
                 </Avatar>
                 <div className="text-[0.8rem] md:text-[0.9rem] text-muted-foreground">
                   <p>{review.name}</p>

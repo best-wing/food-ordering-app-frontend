@@ -5,6 +5,7 @@ import MobileNav from "./MobileNav";
 import MainNav from "./MainNav";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "./ui/button";
+import TransitionLink from "./TransitionLink";
 
 function Header() {
   const [showNav, setShowNav] = useState(true);
@@ -46,12 +47,12 @@ function Header() {
     >
       <div className="flex justify-between items-center">
         
-        <Link
+        <TransitionLink
           href={"/"}
           className="text-3x1 font-bold tracking-tight text-orange-500"
         >
           BiteZ.com
-        </Link>
+        </TransitionLink>
         <div className="hidden lg:block">
           <MainNav />
         </div>
