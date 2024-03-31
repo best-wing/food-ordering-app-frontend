@@ -3,8 +3,11 @@ import { useGetMyOrders } from "@/api/OrderApi";
 import OrderStatusDetail from "@/components/OrderStatusDetail";
 import OrderStatusHeader from "@/components/OrderStatusHeader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Loader } from "lucide-react";
 import React from "react";
+import { FaOpencart } from "react-icons/fa6";
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 const OrderStatus = () => {
   const { orders, isLoading } = useGetMyOrders();
@@ -19,8 +22,13 @@ const OrderStatus = () => {
 
   if (!orders || orders.length === 0) {
     return (
-      <div className="h-screen flex items-center justify-center font-bold w-full text-4xl bg-gray-50">
-        No orders found!
+      <div className="h-screen flex flex-col items-center justify-center bg-gray-50">
+        <MdRemoveShoppingCart className="text-6xl" />
+        <AnimatedCharacters
+          className="text-3xl font-bold text-[#222] md:block hidden"
+          text="No orders found!"
+          type="heading1"
+        />
       </div>
     );
   }

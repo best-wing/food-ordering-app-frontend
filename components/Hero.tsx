@@ -47,10 +47,11 @@ const Hero = () => {
               type="paragraph"
             />
             <AnimatedCharacters
-              className="text-3xl font-bold text-[#fff]"
+              className="text-3xl font-bold text-[#fff] md:block hidden"
               text="Explore World Cuisines from Your Home"
               type="heading1"
             />
+            <h1 className="text-3xl font-bold text-[#fff] md:hidden block">Explore World Cuisines from Your Home</h1>
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
               With BiteZ, embark on a culinary journey across the globe without
               leaving your house. We&apos;ve partnered with authentic restaurants

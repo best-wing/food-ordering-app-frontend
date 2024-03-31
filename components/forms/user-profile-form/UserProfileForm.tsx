@@ -55,7 +55,7 @@ const UserProfileForm = ({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSave)}
-        className="space-y-4 bg-gray-50 rounded-lg md:p-10 h-full"
+        className="space-y-4 bg-gray-50 rounded-lg p-10 h-full"
       >
         <div>
           <AnimatedCharacters

@@ -69,10 +69,11 @@ const PopularDishes = () => {
       <div className="container flex gap-10 h-full flex-wrap lg:flex-nowrap lg:px-20 justify-between">
         <div className="flex flex-col justify-center gap-4 lg:w-[50%]">
           <AnimatedCharacters
-            className="text-2xl md:text-4xl font-bold lg:w-[90%]"
+            className="text-2xl md:text-4xl font-bold lg:w-[90%] md:block hidden"
             text="Discover the Best Restaurants and Their Popular Dishes"
             type="heading1"
           />
+          <h1 className="text-2xl md:text-4xl font-bold lg:w-[90%] md:hidden block">Discover the Best Restaurants and Their Popular Dishes </h1>
           <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[70%]">
             With BiteZ, you can easily order your favorite food from local
             restaurants. Simply browse, select, and checkout. It&apos;s that
@@ -82,20 +83,22 @@ const PopularDishes = () => {
             <li className="flex flex-col gap-2">
               <Soup className="text-orange-500" size={20} />
               <AnimatedCharacters
-                className="text-2xl md:text-3xl font-bold text-[#222]"
+                className="text-2xl md:text-3xl font-bold text-[#222] md:block hidden"
                 text="Featured Restaurants"
                 type="heading2"
               />
+              <h2 className="text-2xl md:text-3xl font-bold text-[#222] md:hidden block">Featured Restaurants</h2>
               Browse through our handpicked collection of restaurants and their
               signature dishes.
             </li>
             <li className="flex flex-col gap-2">
               <Soup className="text-orange-500" size={20} />
               <AnimatedCharacters
-                className="text-2xl md:text-3xl font-bold text-[#222]"
+                className="text-2xl md:text-3xl font-bold text-[#222] md:block hidden"
                 text="Popular Dishes"
                 type="heading2"
               />
+              <h2 className="text-2xl md:text-3xl font-bold text-[#222] md:hidden block">Popular Dishes</h2>
               Indulge in the most loved dishes from our top-rated restaurants.
             </li>
           </ul>
@@ -131,10 +134,11 @@ const PopularDishes = () => {
               type="heading1"
             />
             <AnimatedCharacters
-              className="text-3xl font-bold text-[#fff]"
+              className="text-3xl font-bold text-[#fff] md:block hidden"
               text="Discover the Best Food in Town"
               type="heading1"
             />
+            <h1 className="text-3xl font-bold text-[#fff] md:hidden block">Discover the Best Food in Town</h1>
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
               At BiteZ, we&apos;ve partnered with the finest restaurants to
               bring you a wide variety of delicious dishes. Join our community

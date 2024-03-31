@@ -20,6 +20,7 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import Link from "next/link";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const MobileNav = () => {
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
@@ -47,48 +48,23 @@ const MobileNav = () => {
             <MobileNavLinks />
           ) : (
             <>
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger
-                      className={`
-                          ? "text-[#000] dark:text-white"
-                          : "text-[#808080]"
-                       font-bold hover:text-orange-500 text-1xl`}
-                    >
-                      Location
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="w-full p-2">
-                        <Link
-                          className="block select-none space-y-1 text-sm font-medium rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/search/uk"
-                        >
-                          UK
-                        </Link>
-                        <Link
-                          className="block select-none space-y-1 text-sm font-medium  rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/search/Spain"
-                        >
-                          Spain
-                        </Link>
-                        <Link
-                          className="block select-none space-y-1 text-sm font-medium  rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/search/Greece"
-                        >
-                          Greece
-                        </Link>
-                        <Link
-                          className="block select-none space-y-1 text-sm font-medium  rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/search/Germany"
-                        >
-                          Germany
-                        </Link>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>Location</AccordionTrigger>
+                  <Link href="/search/UK">
+                    <AccordionContent>UK</AccordionContent>
+                  </Link>
+                  <Link href="/search/Spain">
+                    <AccordionContent>Spain</AccordionContent>
+                  </Link>
+                  <Link href="/search/Greece">
+                    <AccordionContent>Greece</AccordionContent>
+                  </Link>
+                  <Link href="/search/Germany">
+                    <AccordionContent>Germany</AccordionContent>
+                  </Link>
+                </AccordionItem>
+              </Accordion>
               <Button
                 onClick={() => loginWithRedirect()}
                 className="flex-1 font-bold bg-orange-500"

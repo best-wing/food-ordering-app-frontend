@@ -10,6 +10,7 @@ import { MenuItem as MenuItemType } from "@/components/types";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardFooter } from "@/components/ui/card";
 import { Loader } from "lucide-react";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
 
@@ -111,7 +112,7 @@ const DetailPage = () => {
 
   return (
     <div className="container flex flex-col gap-10 bg-gray-50 pb-10">
-      <AspectRatio ratio={14 / 5}>
+      <AspectRatio ratio={16 / 5}>
         <img
           src={restaurant.imageUrl}
           className="rounded-md object-cover h-full w-full"

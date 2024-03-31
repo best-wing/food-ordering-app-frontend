@@ -86,10 +86,11 @@ const FoodDiscoveryPage = () => {
       <div className="container flex gap-10 flex-wrap lg:flex-nowrap lg:px-20 justify-between">
         <div className="flex flex-col justify-center gap-4 lg:w-[50%]">
           <AnimatedCharacters
-            className="text-2xl md:text-4xl font-bold w-[80%]"
+            className="text-2xl md:text-4xl font-bold w-[80%] md:block hidden"
             text="Explore Our Menu and Savor the Flavors"
             type="heading1"
           />
+          <h1 className="text-2xl md:text-4xl font-bold w-[80%] md:hidden block">Explore Our Menu and Savor the Flavors</h1>
           <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[90%]">
             Dive into BiteZ&apos;s diverse menu, featuring a cornucopia of
             dishes from the finest local eateries. Our platform makes it easy
@@ -167,10 +168,11 @@ const FoodDiscoveryPage = () => {
           <div key={index} className="flex flex-col gap-5">
             <ChefHat className="text-orange-500" size={25} />
             <AnimatedCharacters
-              className="text-2xl lg:text-3xl font-bold"
+              className="text-2xl lg:text-3xl font-bold md:block hidden"
               text={item.title}
               type="heading1"
             />
+            <h1 className="text-2xl lg:text-3xl font-bold md:hidden block">{item.title}</h1>
             <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
               {item.description}
             </p>

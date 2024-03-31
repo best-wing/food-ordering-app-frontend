@@ -17,10 +17,11 @@ const AboutUs = () => {
           width={2000}
           height={2000}
         />
-        <div className="flex relative p-10 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center items-center">
+        <div className="flex relative p-5 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center items-center">
           <div className="flex flex-col gap-y-5">
             <AnimatedCharacters className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]" type="paragraph" text="Who We Are" />
-            <AnimatedCharacters className="text-3xl font-bold text-[#fff]" type="heading1" text="Bringing the World to Your Table" />
+            <AnimatedCharacters className="text-3xl font-bold text-[#fff] md:block hidden" type="heading1" text="Bringing the World to Your Table" />
+            <h1 className="text-3xl font-bold text-[#fff] md:hidden block">Bringing the World to Your Table </h1>
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
               At BiteZ, we&apos;re more than just a food delivery service; we&apos;re a
               gateway to global cuisine. Founded on the belief that food is a
@@ -34,14 +35,15 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="container p-10 lg:p-20">
-        <AnimatedCharacters className="text-2xl md:text-4xl font-bold" type="heading1" text="How to Discover and Order with BiteZ" />
-        <div className="flex justify-between flex-col lg:flex-row gap-10 mt-10">
+      <div className="container p-5 lg:p-20">
+        <AnimatedCharacters className="text-2xl md:text-3xl font-bold md:block hidden" type="heading1" text="How to Discover and Order with BiteZ" />
+        <h1 className="text-2xl md:text-3xl font-bold md:hidden block">How to Discover and Order with BiteZ </h1>
+        <div className="flex justify-between flex-col lg:flex-row gap-10 mt-5">
           <div className="w-full h-full">
             <Image
               src={Image1}
               alt="Discover Cuisines"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[300px] object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
               width={1000}
             />
             <AnimatedCharacters className="text-1xl font-bold my-2" type="heading2" text="Discover" />
@@ -58,7 +60,7 @@ const AboutUs = () => {
             <Image
               src={Image2}
               alt="Place Your Order"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[300px] object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
               width={500}
             />
             <AnimatedCharacters className="text-1xl font-bold my-2" type="heading2" text="Order" />
@@ -74,7 +76,7 @@ const AboutUs = () => {
             <Image
               src={Image3}
               alt="Track Your Feast"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[300px] object-cover transition-transform duration-700 hover:scale-105 cursor-pointer"
               width={1000}
             />
             <AnimatedCharacters className="text-1xl font-bold my-2" type="heading2" text="Enjoy" />

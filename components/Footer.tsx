@@ -55,17 +55,17 @@ const Footer = () => {
             <h1 className="font-bold text-[#2F4F4F] dark:text-white md:text-[30px] lg:text-[17px] xl:text-[22px]">
               Address:
             </h1>
-            <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3] underline">
+            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
               123 Main St, Sydney NSW 2000, Australia
             </p>
           </div>
           <h1 className="font-bold text-[#2F4F4F] dark:text-white md:text-[30px] lg:text-[17px] xl:text-[22px]">
             Contact:
           </h1>
-          <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3]">
+          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
             +1 (555) 123-4567
           </p>
-          <p className="md:text-[16px] xs:text-[14px] text-[#222] font-sans dark:text-[#d3d3d3]">
+          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
             hello@bitez.com
           </p>
           <div className="flex gap-x-5 mt-5">
@@ -88,7 +88,7 @@ const Footer = () => {
                 <Link
                   key={linkIndex}
                   href={link.href}
-                  className="md:text-[16px] xs:text-[14px] font-sans text-[#222] dark:text-[#d3d3d3] cursor-pointer text w-max hover:text-orange-500 dark:hover:text-[#fff] hover:font-semibold"
+                  className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline hover:text-orange-500"
                 >
                   {link.label}
                 </Link>
@@ -102,18 +102,6 @@ const Footer = () => {
         <p className="md:text-[16px] xs:text-[12px] sm:text-[13px] text-[#222] dark:text-[#d3d3d3] cursor-pointer">
           © 2024 BiteZ. All rights reserved.
         </p>
-        <div className="flex gap-x-5">
-          <p className="md:text-[16px] xs:text-[12px] sm:text-[13px] text-[#222] font-sans dark:text-[#d3d3d3]">
-            Powered by{" "}
-            <Link
-              target="_blank"
-              className="underline underline-offset-2  cursor-pointer text-[#00dac4]"
-              href="https://yie-portfolioo.vercel.app/"
-            >
-              Yie
-            </Link>
-          </p>
-        </div>
       </div>
     </div>
   );

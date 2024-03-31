@@ -50,7 +50,7 @@ const Reviews = () => {
                 <Avatar>
                   <AvatarFallback>{review.avatarLetters}</AvatarFallback>
                 </Avatar>
-                <div className="text-[0.8rem] md:text-[0.9rem] text-muted-foreground">
+                <div className="text-[0.8rem] md:text-[0.9rem] text-muted-foreground w-[120px] md:w-full">
                   <p>{review.name}</p>
                   <p>{review.role}</p>
                 </div>
