@@ -7,16 +7,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
 function DetailsSection() {
   const { control } = useFormContext();
-  
+
   return (
     <div className="space-y-2">
       <div>
-        <h2 className="text-2xl font-bold">Details</h2>
+        <AnimatedCharacters
+          className="text-2xl font-bold"
+          text="Details"
+          type="heading1"
+        />
         <FormDescription>
           Enteer the details about your restaurant
         </FormDescription>
@@ -63,8 +68,7 @@ function DetailsSection() {
           )}
         />
       </div>
-      
-      
+
       <FormField
         control={control}
         name="deliveryPrice"

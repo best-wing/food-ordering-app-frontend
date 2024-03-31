@@ -3,6 +3,7 @@ import { FormDescription, FormField, FormItem } from "@/components/ui/form";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import MenuItemInput from "./MenuItemInput";
 import { toast } from "sonner";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
 const MenuSection = () => {
   const { control } = useFormContext();
@@ -25,7 +26,11 @@ const MenuSection = () => {
   return (
     <div className="space-y-2">
       <div>
-        <h2 className="text-2xl font-bold">Menu</h2>
+        <AnimatedCharacters
+          className="text-2xl font-bold"
+          text="Menu"
+          type="heading1"
+        />
         <FormDescription>
           Create your menu and give each item a name and a price and a image
         </FormDescription>

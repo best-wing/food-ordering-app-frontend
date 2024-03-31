@@ -7,6 +7,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
@@ -18,7 +19,11 @@ const ImageSection = () => {
   return (
     <div className="space-y-2">
       <div>
-        <h2 className="text-2xl font-bold">Image</h2>
+        <AnimatedCharacters
+          className="text-2xl font-bold"
+          text="Image"
+          type="heading1"
+        />
         <FormDescription>
           Add an image that will be desplayed on your restaurant listing in the
           search results. Adding a new image will overwrite the existing one.

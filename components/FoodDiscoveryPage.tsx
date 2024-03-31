@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SearchBar, { SearchForm } from "./SearchBar";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
@@ -8,16 +8,45 @@ import { ChefHat } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Separator } from "./ui/separator";
 import { Link as Navigate } from "react-scroll";
-import Link from "next/link";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import TransitionLink from "./TransitionLink";
+import { motion, useAnimation } from "framer-motion";
 
 const FoodDiscoveryPage = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
   const router = useRouter();
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
   const handleSearchSubmit = (searchFormValues: SearchForm) => {
     router.push(`/search/${searchFormValues.searchQuery}`);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({
+            y: 0,
+            opacity: 1,
+            transition: { type: 'spring', duration: 3.5, bounce: 0.3 },
+          });
+
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, [controls]);
 
   const listContent = [
     {
@@ -120,15 +149,17 @@ const FoodDiscoveryPage = () => {
             )}
           </div>
         </div>
-        <div className="w-full lg:w-1/2">
-          <AspectRatio ratio={16 / 10}>
-            <img
-              src="/assets/Menu-image.png"
-              className="object-cover h-full w-full rounded-md"
-              alt="Delicious food options"
-            />
-          </AspectRatio>
-        </div>
+        <div className="w-full lg:w-1/2" ref={ref}>
+        <AspectRatio ratio={16 / 10}>
+          <motion.img
+            initial={{ y: '20%', opacity: 0 }}
+            animate={controls}
+            src="/assets/Menu-image.png"
+            className="object-cover h-full w-full rounded-md"
+            alt="Delicious food options"
+          />
+        </AspectRatio>
+      </div>
       </div>
       <Separator />
       <div className="container flex flex-col lg:flex-row gap-10 lg:px-20">

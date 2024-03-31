@@ -12,6 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -57,7 +58,11 @@ const UserProfileForm = ({
         className="space-y-4 bg-gray-50 rounded-lg md:p-10 h-full"
       >
         <div>
-          <h2 className="text-2xl font-bold">{title}</h2>
+          <AnimatedCharacters
+            className="text-2xl font-bold"
+            text={title}
+            type="heading1"
+          />
           <FormDescription>
             View and change your profile information here
           </FormDescription>

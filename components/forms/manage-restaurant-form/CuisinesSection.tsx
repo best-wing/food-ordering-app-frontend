@@ -8,13 +8,18 @@ import {
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import CuisineCheckbox from "./CuisineCheckbox";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
 const CuisinesSection = () => {
   const { control } = useFormContext();
   return (
     <div className="space-y-2">
       <div>
-        <h2 className="text-2xl font-bold">Cuisines</h2>
+        <AnimatedCharacters
+          className="text-2xl font-bold"
+          text="Cuisines"
+          type="heading1"
+        />
         <FormDescription>
           Select the cuisines that your restaurant serves
         </FormDescription>
@@ -26,7 +31,11 @@ const CuisinesSection = () => {
           <FormItem>
             <div className="grid md:grid-cols-5 gap-1">
               {cuisineList.map((cuisineItem, index) => (
-                <CuisineCheckbox key={index} cuisine={cuisineItem} field={field} />
+                <CuisineCheckbox
+                  key={index}
+                  cuisine={cuisineItem}
+                  field={field}
+                />
               ))}
             </div>
             <FormMessage />

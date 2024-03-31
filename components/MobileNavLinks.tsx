@@ -13,28 +13,17 @@ const MobileNavLinks = () => {
   const { logout, user } = useAuth0();
   return (
     <div className="flex flex-col gap-y-5">
-      <Link
-        href={"/order-status"}
-        className="text-sm font-medium"
-      >
+      <Link href={"/order-status"} className="text-sm font-medium">
         Order Status
       </Link>
-      <Link
-        href={"/manage-restaurant"}
-        className="text-sm font-medium"
-      >
+      <Link href={"/manage-restaurant"} className="text-sm font-medium">
         My Restaurant
       </Link>
-      <Link
-        href={"/user-profile"}
-        className="text-sm font-medium"
-      >
+
+      <Link href={"/user-profile"} className="text-sm font-medium">
         User Profile
       </Link>
-      <Link
-        href={"/manage-restaurant"}
-        className="text-sm font-medium"
-      >
+      <Link href={"/manage-restaurant"} className="text-sm font-medium">
         Manage Restaurant
       </Link>
       <Accordion type="single" collapsible className="w-full">

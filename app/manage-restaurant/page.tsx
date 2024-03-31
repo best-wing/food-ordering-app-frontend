@@ -12,6 +12,7 @@ import ManageRestaurantForm from "@/components/forms/manage-restaurant-form/Mana
 import { Loader } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import OrderItemCard from "@/components/OrderItemCard";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
 const ManageRestaurant = () => {
   const { createRestaurant, isLoading: isCreateLoading } =
@@ -68,7 +69,11 @@ const ManageRestaurant = () => {
               : "h-full space-y-5 p-10"
           }
         >
-          <h2 className="text-2xl font-bold">{orders?.length} active orders</h2>
+          <AnimatedCharacters
+            className="text-2xl font-bold"
+            text={`${orders?.length} active orders`}
+            type="heading1"
+          />
           {orders?.map((order) => (
             <OrderItemCard key={order._id} order={order} />
           ))}

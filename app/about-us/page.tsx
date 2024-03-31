@@ -2,24 +2,11 @@
 import { Dishes, Image1, Image2, Image3 } from "@/public/assets";
 import Image from "next/image";
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 
-type Props = {
-  percentage: string;
-  label: string;
-};
 
 const AboutUs = () => {
-  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
-  const StatCard = ({ percentage, label }: Props) => (
-    <div className="flex-1 flex gap-3">
-      <div className="h-20 bg-white" style={{ width: "2px" }} />
-      <div className="flex flex-col gap-y-5">
-        <h1 className="text-4xl font-bold text-[#fff]">{percentage}%</h1>
-        <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]">{label}</p>
-      </div>
-    </div>
-  );
+
   return (
     <div className="h-full bg-gray-50">
       <div className="w-full h-[700px] lg:max-h-[800px] flex">
@@ -32,12 +19,8 @@ const AboutUs = () => {
         />
         <div className="flex relative p-10 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center items-center">
           <div className="flex flex-col gap-y-5">
-            <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]">
-              Who We Are
-            </p>
-            <h1 className="text-3xl font-bold text-[#fff]">
-              Bringing the World to Your Table
-            </h1>
+            <AnimatedCharacters className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]" type="paragraph" text="Who We Are" />
+            <AnimatedCharacters className="text-3xl font-bold text-[#fff]" type="heading1" text="Bringing the World to Your Table" />
             <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
               At BiteZ, we&apos;re more than just a food delivery service; we&apos;re a
               gateway to global cuisine. Founded on the belief that food is a
@@ -52,9 +35,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="container p-10 lg:p-20">
-        <h1 className="text-2xl md:text-4xl font-bold">
-          How to Discover and Order with BiteZ
-        </h1>
+        <AnimatedCharacters className="text-2xl md:text-4xl font-bold" type="heading1" text="How to Discover and Order with BiteZ" />
         <div className="flex justify-between flex-col lg:flex-row gap-10 mt-10">
           <div className="w-full h-full">
             <Image
@@ -63,7 +44,7 @@ const AboutUs = () => {
               className="w-full h-[400px] object-cover"
               width={1000}
             />
-            <h3 className="text-1xl font-bold my-2">Discover</h3>
+            <AnimatedCharacters className="text-1xl font-bold my-2" type="heading2" text="Discover" />
             <p className="text-1xl text-muted-foreground">
               BiteZ opens a door to the world&apos;s cuisines, directly from our
               homepage. Explore our vast selection of restaurants offering
@@ -80,7 +61,7 @@ const AboutUs = () => {
               className="w-full h-[400px] object-cover"
               width={500}
             />
-            <h3 className="text-1xl font-bold my-2">Order</h3>
+            <AnimatedCharacters className="text-1xl font-bold my-2" type="heading2" text="Order" />
             <p className="text-1xl text-muted-foreground">
               Found something that tickles your taste buds? Add it to your cart
               with a tap. Our checkout process is streamlined for ease - review
@@ -96,7 +77,7 @@ const AboutUs = () => {
               className="w-full h-[400px] object-cover"
               width={1000}
             />
-            <h3 className="text-1xl font-bold my-2">Enjoy</h3>
+            <AnimatedCharacters className="text-1xl font-bold my-2" type="heading2" text="Enjoy" />
             <p className="text-1xl text-muted-foreground">
               Once your order is placed, sit back and get ready for a culinary
               delight. Track your order&apos;s progress from the kitchen to your

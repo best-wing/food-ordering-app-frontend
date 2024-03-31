@@ -26,7 +26,7 @@ const OrderStatus = () => {
   }
 
   return (
-    <div className="flex flex-wrap gap-5 justify-between container py-10">
+    <div className="flex flex-wrap gap-5 justify-between container py-10 bg-gray-50">
       {orders.map((order) => (
         <div
           key={order._id}

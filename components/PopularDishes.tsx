@@ -1,6 +1,6 @@
 "use client";
 import { Soup } from "lucide-react";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { AspectRatio } from "./ui/aspect-ratio";
 import Image from "next/image";
 import { Image12 } from "@/public/assets";
@@ -8,9 +8,9 @@ import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link as Navigate } from "react-scroll";
-import Link from "next/link";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import TransitionLink from "./TransitionLink";
+import { useAnimation, motion } from "framer-motion";
 
 type Props = {
   percentage: string;
@@ -18,6 +18,8 @@ type Props = {
 };
 
 const PopularDishes = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
   // StatCard Function for reusability
@@ -34,6 +36,33 @@ const PopularDishes = () => {
       </div>
     </div>
   );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({
+            y: 0,
+            opacity: 1,
+            transition: { type: 'spring', duration: 3.5, bounce: 0.3 },
+          });
+
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, [controls]);
 
   return (
     <>
@@ -71,15 +100,18 @@ const PopularDishes = () => {
             </li>
           </ul>
         </div>
-        <div className="w-full lg:w-1/2">
-          <AspectRatio ratio={16 / 10}>
-            <img
-              src="/assets/Dish.jpg"
-              className="object-cover h-full w-full rounded-md"
-              alt="Delicious food options"
-            />
-          </AspectRatio>
+        <div className="w-full lg:w-1/2" ref={ref}>
+        <AspectRatio ratio={16 / 10}>
+          <motion.img
+            initial={{ y: '20%', opacity: 0 }}
+            animate={controls}
+            src="/assets/Dish.jpg"
+            className="object-cover h-full w-full rounded-md"
+            alt="Delicious food options"
+          />
+        </AspectRatio>
         </div>
+        
       </div>
 
       <Separator className="my-20" />

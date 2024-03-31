@@ -1,28 +1,53 @@
 import React from "react";
 import { Restaurant } from "./types";
-import Link from "next/link";
 import { AspectRatio } from "./ui/aspect-ratio";
 import { Banknote, Clock, Dot } from "lucide-react";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import TransitionLink from "./TransitionLink";
-
+import { motion } from "framer-motion"
 type Props = {
   restaurant: Restaurant;
 };
 
 const SearchResultCard = ({ restaurant }: Props) => {
+  const cardVariants = {
+    offscreen: {
+      x: -50,
+      opacity: 0
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 1.8
+      }
+    }
+  };
   return (
     <TransitionLink
       href={`/detail/${restaurant._id}`}
       className="grid lg:grid-cols-[2fr_3fr] gap-5 group"
     >
-      <AspectRatio ratio={14 / 6}>
-        <img
-          src={restaurant.imageUrl}
-          className="rounded-md w-full h-full object-cover"
-        />
-      </AspectRatio>
-      <div>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={cardVariants}
+      >
+        <AspectRatio ratio={14 / 6}>
+          <img
+            src={restaurant.imageUrl}
+            className="rounded-md w-full h-full object-cover"
+            alt="Delicious food options"
+          />
+        </AspectRatio>
+      </motion.div>
+      <motion.div initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={cardVariants}>
         <AnimatedCharacters
           className="text-2xl font-bold tracking-tight mb-2 group-hover:underline"
           text={restaurant.restaurantName}
@@ -63,7 +88,7 @@ const SearchResultCard = ({ restaurant }: Props) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </TransitionLink>
   );
 };
