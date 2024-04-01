@@ -39,26 +39,29 @@ const Hero = () => {
           width={2000}
           height={2000}
         />
-        <div className="flex relative p-5 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center items-center">
-          <div className="flex flex-col gap-y-5">
+        <div className="flex relative p-5 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center ">
+          <div className="flex flex-col gap-y-5 xl:w-1/2">
             <AnimatedCharacters
               className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]"
               text="Delicious"
               type="paragraph"
             />
             <AnimatedCharacters
-              className="text-3xl font-bold text-[#fff] md:block hidden"
-              text="Explore World Cuisines from Your Home"
+              className="text-5xl font-semibold text-[#fff] md:block hidden"
+              text="Explore"
               type="heading1"
             />
-            <h1 className="text-3xl font-bold text-[#fff] md:hidden block">Explore World Cuisines from Your Home</h1>
-            <p className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6] md:w-1/2">
-              With BiteZ, embark on a culinary journey across the globe without
-              leaving your house. We&apos;ve partnered with authentic restaurants
-              from various countries to offer you an unparalleled selection of
-              international dishes. Dive into a new culture with every meal and
-              join our global community of food lovers today.
-            </p>
+            <AnimatedCharacters
+              className="text-5xl font-semibold text-[#fff] md:block hidden"
+              text="Global Cuisines"
+              type="heading1"
+            />
+            <AnimatedCharacters
+              className="text-5xl font-semibold text-[#fff] md:block hidden"
+              text="From Your Home"
+              type="heading1"
+            />
+            <h1 className="text-3xl font-semibold text-[#fff] md:hidden block">Explore <br /> Global Cuisines <br /> from Your Home</h1>
             <div className="flex gap-5">
               <TransitionLink href="/about-us">
                 <Button>Learn More</Button>
@@ -72,7 +75,7 @@ const Hero = () => {
               )}
             </div>
           </div>
-          <div className="space-y-10 w-full">
+          <div className="space-y-10 xl:w-1/2">
             <div className="flex gap-3 w-full">
               <StatCard percentage="95" label="Global Cuisines Offered" />
               <StatCard percentage="85" label="On-Time Deliveries" />
