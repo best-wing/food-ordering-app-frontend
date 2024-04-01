@@ -20,11 +20,11 @@ const ImageSection = () => {
     <div className="space-y-2">
       <div>
         <AnimatedCharacters
-          className="text-2xl font-bold"
+          className="text-2xl font-bold dark:text-white"
           text="Image"
           type="heading1"
         />
-        <FormDescription>
+        <FormDescription className="dark:text-[#D7D7D7]">
           Add an image that will be desplayed on your restaurant listing in the
           search results. Adding a new image will overwrite the existing one.
         </FormDescription>
@@ -45,7 +45,7 @@ const ImageSection = () => {
             <FormItem>
               <FormControl>
                 <Input
-                  className="bg-white"
+                  className="bg-white dark:bg-[#181c20] dark:text-white"
                   type="file"
                   accept=".jpg, .jpeg, .png"
                   onChange={(e) =>

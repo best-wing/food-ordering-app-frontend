@@ -66,7 +66,7 @@ const PopularDishes = () => {
 
   return (
     <>
-      <div className="container flex gap-10 h-full flex-wrap lg:flex-nowrap lg:px-20 justify-between">
+      <div className="container flex gap-10 h-full flex-wrap lg:flex-nowrap lg:px-20 justify-between dark:bg-[#11161b] py-10">
         <div className="flex flex-col justify-center gap-4 lg:w-[50%]">
           <AnimatedCharacters
             className="text-2xl md:text-4xl font-bold lg:w-[90%] md:block hidden"
@@ -74,31 +74,31 @@ const PopularDishes = () => {
             type="heading1"
           />
           <h1 className="text-2xl md:text-4xl font-bold lg:w-[90%] md:hidden block">Discover the Best Restaurants and Their Popular Dishes </h1>
-          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[70%]">
+          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[70%] dark:text-[#D7D7D7]">
             With BiteZ, you can easily order your favorite food from local
             restaurants. Simply browse, select, and checkout. It&apos;s that
             simple!
           </p>
           <ul className="text-[0.8rem] md:text-[1rem] text-muted-foreground flex flex-col md:flex-row gap-5">
-            <li className="flex flex-col gap-2">
+            <li className="flex flex-col gap-2 dark:text-[#D7D7D7]">
               <Soup className="text-orange-500" size={20} />
               <AnimatedCharacters
-                className="text-2xl md:text-3xl font-bold text-[#222] md:block hidden"
+                className="text-2xl md:text-3xl font-bold text-[#222] md:block hidden dark:text-[#fff]"
                 text="Featured Restaurants"
                 type="heading2"
               />
-              <h2 className="text-2xl md:text-3xl font-bold text-[#222] md:hidden block">Featured Restaurants</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#222] dark:text-[#fff] md:hidden block">Featured Restaurants</h2>
               Browse through our handpicked collection of restaurants and their
               signature dishes.
             </li>
-            <li className="flex flex-col gap-2">
+            <li className="flex flex-col gap-2 dark:text-[#D7D7D7]">
               <Soup className="text-orange-500" size={20} />
               <AnimatedCharacters
-                className="text-2xl md:text-3xl font-bold text-[#222] md:block hidden"
+                className="text-2xl md:text-3xl font-bold text-[#222] md:block hidden dark:text-[#fff]"
                 text="Popular Dishes"
                 type="heading2"
               />
-              <h2 className="text-2xl md:text-3xl font-bold text-[#222] md:hidden block">Popular Dishes</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#222] dark:text-white md:hidden block">Popular Dishes</h2>
               Indulge in the most loved dishes from our top-rated restaurants.
             </li>
           </ul>

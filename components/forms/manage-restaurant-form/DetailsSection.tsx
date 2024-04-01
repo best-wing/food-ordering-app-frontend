@@ -18,11 +18,11 @@ function DetailsSection() {
     <div className="space-y-2">
       <div>
         <AnimatedCharacters
-          className="text-2xl font-bold"
+          className="text-2xl font-bold dark:text-white"
           text="Details"
           type="heading1"
         />
-        <FormDescription>
+        <FormDescription className="dark:text-[#D7D7D7]">
           Enteer the details about your restaurant
         </FormDescription>
       </div>
@@ -31,7 +31,7 @@ function DetailsSection() {
         name="restaurantName"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Name</FormLabel>
+            <FormLabel className="dark:text-white">Name</FormLabel>
             <FormControl>
               <Input {...field} className="bg-white" />
             </FormControl>
@@ -46,7 +46,7 @@ function DetailsSection() {
           name="city"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>City</FormLabel>
+              <FormLabel className="dark:text-white">City</FormLabel>
               <FormControl>
                 <Input {...field} className="bg-white" />
               </FormControl>
@@ -59,7 +59,7 @@ function DetailsSection() {
           name="country"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Country</FormLabel>
+              <FormLabel className="dark:text-white">Country</FormLabel>
               <FormControl>
                 <Input {...field} className="bg-white" />
               </FormControl>
@@ -74,7 +74,7 @@ function DetailsSection() {
         name="deliveryPrice"
         render={({ field }) => (
           <FormItem className="mx-w-[25%]">
-            <FormLabel>Delivery price (£)</FormLabel>
+            <FormLabel className="dark:text-white">Delivery price (£)</FormLabel>
             <FormControl>
               <Input {...field} className="bg-white" placeholder="1.50" />
             </FormControl>
@@ -87,7 +87,7 @@ function DetailsSection() {
         name="estimatedDeliveryTime"
         render={({ field }) => (
           <FormItem className="mx-w-[25%]">
-            <FormLabel>Estimated Delivery Time (minutes)</FormLabel>
+            <FormLabel className="dark:text-white">Estimated Delivery Time (minutes)</FormLabel>
             <FormControl>
               <Input {...field} className="bg-white" placeholder="30" />
             </FormControl>

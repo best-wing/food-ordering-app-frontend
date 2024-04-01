@@ -46,8 +46,8 @@ const MainNav = () => {
               className={`${
                 isActive(href)
                   ? "text-[#000] dark:text-white"
-                  : "text-[#808080]"
-              } font-bold hover:text-orange-500 mr-5`}
+                  : "text-foreground/60 transition-colors"
+              } font-bold hover:text-orange-500 dark:hover:text-orange-500 mr-5`}
             >
               {label}
             </TransitionLink>
@@ -57,8 +57,8 @@ const MainNav = () => {
             className={`${
               isActive("/user-profile")
                 ? "text-[#000] dark:text-white"
-                : "text-[#808080]"
-            } font-bold hover:text-orange-500`}
+                : "text-foreground/60 transition-colors"
+            } font-bold hover:text-orange-500 dark:hover:text-orange-500 mr-5`}
           >
             Profile
           </TransitionLink>
@@ -71,7 +71,7 @@ const MainNav = () => {
               className={`${
                 isCountryPathActive()
                   ? "text-[#000] dark:text-white"
-                  : "text-[#808080]"
+                  : "text-foreground/60 transition-colors"
               } font-bold hover:text-orange-500 text-1xl`}
             >
               Location

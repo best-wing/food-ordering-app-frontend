@@ -13,7 +13,7 @@ const Faq = () => {
     <div className="container md:p-10 lg:p-20 bg-gray-50 flex flex-col">
       <div className="mb-20 flex flex-col items-center mt-10 md:mt-0">
         <AnimatedCharacters type="heading1" text="Frequently Asked Questions" />
-        <p className="font-semibold lg:text-[20px] md:text-[18px] text-center xs:text-[14px] text-[#11142D] dark:text-[#eee]">
+        <p className="font-semibold lg:text-[20px] md:text-[18px] text-center xs:text-[14px] text-[#11142D]">
           Find answers to common questions about our organization, how to help,
           and where to go.
         </p>

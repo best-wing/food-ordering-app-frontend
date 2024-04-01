@@ -28,7 +28,7 @@ const FoodDiscoveryPage = () => {
           controls.start({
             y: 0,
             opacity: 1,
-            transition: { type: 'spring', duration: 3.5, bounce: 0.3 },
+            transition: { type: "spring", duration: 3.5, bounce: 0.3 },
           });
 
           observer.disconnect();
@@ -70,7 +70,7 @@ const FoodDiscoveryPage = () => {
     <main className="flex flex-col gap-12 items-center">
       <div
         id="order"
-        className="bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center mt-10 px-5 md:px-20 w-full md:w-[80%] lg:w-1/2"
+        className="bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center mt-10 px-5 md:px-20 w-full md:w-[80%] lg:w-1/2 dark:bg-[#11161b]"
       >
         <h1 className="md:text-4xl text-3xl font-bold tracking-tight text-orange-600">
           Indulge in Your Favorite Meal Today
@@ -83,28 +83,30 @@ const FoodDiscoveryPage = () => {
           onSubmit={handleSearchSubmit}
         />
       </div>
-      <div className="container flex gap-10 flex-wrap lg:flex-nowrap lg:px-20 justify-between">
+      <div className="container flex gap-10 flex-wrap lg:flex-nowrap lg:px-20 justify-between dark:bg-[#11161b] py-10">
         <div className="flex flex-col justify-center gap-4 lg:w-[50%]">
           <AnimatedCharacters
             className="text-2xl md:text-4xl font-bold w-[80%] md:block hidden"
             text="Explore Our Menu and Savor the Flavors"
             type="heading1"
           />
-          <h1 className="text-2xl md:text-4xl font-bold w-[80%] md:hidden block">Explore Our Menu and Savor the Flavors</h1>
-          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[90%]">
+          <h1 className="text-2xl md:text-4xl font-bold w-[80%] md:hidden block">
+            Explore Our Menu and Savor the Flavors
+          </h1>
+          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground lg:w-[90%] dark:text-[#D7D7D7]">
             Dive into BiteZ&apos;s diverse menu, featuring a cornucopia of
             dishes from the finest local eateries. Our platform makes it easy
             for you to explore, customize, and enjoy the gastronomic delights
             that await you. Here&apos;s how you can embark on a culinary journey
             with just a few clicks:
           </p>
-          <div className="text-[0.8rem] md:text-[1rem] text-muted-foreground flex flex-col gap-y-3 w-full">
+          <div className="text-[0.8rem] md:text-[1rem] text-muted-foreground flex flex-col gap-y-3 w-full dark:text-[#D7D7D7]">
             <div className="flex gap-1">
               <div className="w-6 h-6">
                 <ChefHat className="text-orange-500" size={25} />
               </div>
               <p>
-                <span className="text-1xl font-bold text-[#222]">
+                <span className="text-1xl font-bold text-[#222] dark:text-[#FFF]">
                   Discover Unique Dishes:
                 </span>{" "}
                 Navigate through our extensive menu to find unique and
@@ -116,7 +118,7 @@ const FoodDiscoveryPage = () => {
                 <ChefHat className="text-orange-500" size={25} />
               </div>
               <p>
-                <span className="text-1xl font-bold text-[#222]">
+                <span className="text-1xl font-bold text-[#222] dark:text-[#FFF]">
                   Tailor to Your Taste:
                 </span>
                 Customize your order to match your taste preferences—whether
@@ -129,7 +131,7 @@ const FoodDiscoveryPage = () => {
                 <ChefHat className="text-orange-500" size={25} />
               </div>
               <p>
-                <span className="text-1xl font-bold text-[#222]">
+                <span className="text-1xl font-bold text-[#222] dark:text-[#FFF]">
                   Indulge in Your Favorites:
                 </span>
                 With your order tailored and placed, all that&apos;s left is to
@@ -151,19 +153,19 @@ const FoodDiscoveryPage = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/2" ref={ref}>
-        <AspectRatio ratio={16 / 10}>
-          <motion.img
-            initial={{ y: '20%', opacity: 0 }}
-            animate={controls}
-            src="/assets/Menu-image.png"
-            className="object-cover h-full w-full rounded-md"
-            alt="Delicious food options"
-          />
-        </AspectRatio>
+          <AspectRatio ratio={16 / 10}>
+            <motion.img
+              initial={{ y: "20%", opacity: 0 }}
+              animate={controls}
+              src="/assets/Menu-image.png"
+              className="object-cover h-full w-full rounded-md"
+              alt="Delicious food options"
+            />
+          </AspectRatio>
+        </div>
       </div>
-      </div>
-      <Separator />
-      <div className="container flex flex-col lg:flex-row gap-10 lg:px-20">
+      <Separator className="dark:hidden" />
+      <div className="container flex flex-col lg:flex-row gap-10 lg:px-20 dark:bg-[#181c20] dark:pb-10">
         {listContent.map((item, index) => (
           <div key={index} className="flex flex-col gap-5">
             <ChefHat className="text-orange-500" size={25} />
@@ -172,8 +174,10 @@ const FoodDiscoveryPage = () => {
               text={item.title}
               type="heading1"
             />
-            <h1 className="text-2xl lg:text-3xl font-bold md:hidden block">{item.title}</h1>
-            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
+            <h1 className="text-2xl lg:text-3xl font-bold md:hidden block">
+              {item.title}
+            </h1>
+            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground dark:text-[#D7D7D7]">
               {item.description}
             </p>
             <div className="flex gap-5 mt-auto">

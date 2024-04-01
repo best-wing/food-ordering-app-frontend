@@ -75,15 +75,19 @@ const SearchPage = () => {
     );
   }
   if (!results?.data || !searchTerm) {
-    return <div className="h-screen flex flex-col items-center justify-center bg-gray-50">
-      <h1 className="text-4xl font-bold ">No results found</h1>
-      <p className="text-1xl text-center">Location available now are UK, Spain, Greece, Germany</p>
-    </div>;
+    return (
+      <div className="h-screen flex flex-col gap-y-3 items-center justify-center bg-gray-50 dark:bg-[#181c20]">
+        <h1 className="text-4xl font-bold ">No results found</h1>
+        <p className="text-1xl text-center">
+          Location available now are UK, Spain, Greece, Germany
+        </p>
+      </div>
+    );
   }
 
   return (
     <div
-      className={`container justify-center bg-gray-50 py-10 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-20 ${
+      className={`container justify-center bg-gray-50 py-10 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-20 dark:bg-[#181c20] ${
         results.pagination.total < 3 ? "h-screen" : "h-full"
       }`}
     >
@@ -105,14 +109,20 @@ const SearchPage = () => {
           onReset={resetSearch}
         />
         <div className="flex justify-between items-center flex-col gap-3 lg:flex-row">
-          <SearchResultInfo total={results.pagination.total} city={searchTerm} />
+          <SearchResultInfo
+            total={results.pagination.total}
+            city={searchTerm}
+          />
           <SortOptionDropdown
             sortOption={searchState.sortOption}
             onChange={(value) => setSortOption(value)}
           />
         </div>
         {results.data.map((restaurant, index) => (
-          <SearchResultCard key={restaurant._id || index} restaurant={restaurant} />
+          <SearchResultCard
+            key={restaurant._id || index}
+            restaurant={restaurant}
+          />
         ))}
         <PaginationSelector
           page={results.pagination.page}

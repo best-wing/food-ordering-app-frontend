@@ -6,6 +6,7 @@ import MainNav from "./MainNav";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "./ui/button";
 import TransitionLink from "./TransitionLink";
+import { ModeToggle } from "@/utlis/ModeToggle";
 
 function Header() {
   const [showNav, setShowNav] = useState(true);
@@ -43,10 +44,9 @@ function Header() {
   return (
     <nav
       style={{ top: showNav ? "0" : `-${navbarHeight}px` }}
-      className="bg-white lg:px-10 dark:bg-[#11161b] text-white p-4 font-Cairo w-full border-b-[1px] z-50 border-[#E1E1E1] dark:border-[#555555] sticky top-0 right-0 transition-top duration-500"
+      className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:px-10 p-4 w-full z-50 sticky top-0 right-0 transition-top duration-500"
     >
       <div className="flex justify-between items-center">
-        
         <TransitionLink
           href={"/"}
           className="text-3x1 font-bold tracking-tight text-orange-500"
@@ -56,24 +56,32 @@ function Header() {
         <div className="hidden lg:block">
           <MainNav />
         </div>
-        {isAuthenticated ? (
-          <Button
-            onClick={() => logout()}
-            className="font-bold hover:text-orange-500 hover:bg-white hidden lg:block"
-          >
-            Log Out
-          </Button>
-        ) : (
-          <Button
-            variant="ghost"
-            onClick={async () => await loginWithRedirect()}
-            className="font-bold hover:text-orange-500 hover:bg-white hidden lg:block bg-orange-500"
-          >
-            Log in
-          </Button>
-        )}
-        <div className="lg:hidden ml-auto">
-          <MobileNav />
+        <div className="flex gap-5">
+          {isAuthenticated ? (
+            <Button
+              onClick={() => logout()}
+              className="font-bold hover:text-orange-500 hover:bg-white hidden lg:block"
+            >
+              Log Out
+            </Button>
+          ) : (
+            <Button
+              variant="ghost"
+              onClick={async () => await loginWithRedirect()}
+              className="font-bold hover:text-orange-500 hidden lg:block"
+            >
+              Log in
+            </Button>
+          )}
+          <div className="lg:block hidden">
+            <ModeToggle />
+          </div>
+        </div>
+        <div className="ml-auto flex items-center gap-5 lg:hidden">
+          <ModeToggle />
+          <div className="mt-1">
+            <MobileNav />
+          </div>
         </div>
       </div>
     </nav>

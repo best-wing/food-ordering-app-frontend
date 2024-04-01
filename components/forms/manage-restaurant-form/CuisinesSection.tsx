@@ -16,11 +16,11 @@ const CuisinesSection = () => {
     <div className="space-y-2">
       <div>
         <AnimatedCharacters
-          className="text-2xl font-bold"
+          className="text-2xl font-bold dark:text-white"
           text="Cuisines"
           type="heading1"
         />
-        <FormDescription>
+        <FormDescription className="dark:text-[#D7D7D7]">
           Select the cuisines that your restaurant serves
         </FormDescription>
       </div>
@@ -29,7 +29,7 @@ const CuisinesSection = () => {
         name="cuisines"
         render={({ field }) => (
           <FormItem>
-            <div className="grid md:grid-cols-5 gap-1">
+            <div className="grid md:grid-cols-5 gap-1 dark:text-[#D7D7D7]">
               {cuisineList.map((cuisineItem, index) => (
                 <CuisineCheckbox
                   key={index}

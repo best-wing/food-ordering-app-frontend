@@ -6,7 +6,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import AnimatedCharacters from "@/utlis/AnimatedCharacters";
 import { Loader } from "lucide-react";
 import React from "react";
-import { FaOpencart } from "react-icons/fa6";
 import { MdRemoveShoppingCart } from "react-icons/md";
 
 const OrderStatus = () => {
@@ -22,10 +21,10 @@ const OrderStatus = () => {
 
   if (!orders || orders.length === 0) {
     return (
-      <div className="h-screen flex flex-col items-center justify-center bg-gray-50">
+      <div className="h-screen flex flex-col items-center justify-center bg-gray-50 dark:text-white dark:bg-[#181c20]">
         <MdRemoveShoppingCart className="text-6xl" />
         <AnimatedCharacters
-          className="text-3xl font-bold text-[#222] md:block hidden"
+          className="text-3xl font-semibold text-[#222] dark:text-white md:block hidden"
           text="No orders found!"
           type="heading1"
         />
@@ -34,7 +33,7 @@ const OrderStatus = () => {
   }
 
   return (
-    <div className="flex flex-wrap gap-5 justify-between container py-10 bg-gray-50">
+    <div className="flex flex-wrap gap-5 justify-between container py-10 bg-gray-50 dark:bg-[#181c20]">
       {orders.map((order) => (
         <div
           key={order._id}

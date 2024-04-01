@@ -22,7 +22,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
     return (totalWithDelivery / 100).toFixed(2);
   };
   return (
-    <>
+    <div className="dark:bg-[#11161b]">
       <CardHeader>
         <CardTitle className="text-2xl font-bold tracking-tight flex justify-between">
           <span>Your Order</span>
@@ -58,7 +58,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
         </div>
         <Separator />
       </CardContent>
-    </>
+    </div>
   );
 };
 

@@ -15,12 +15,12 @@ type Props = {
 
 const RestaurantInfo = ({ restaurant }: Props) => {
   return (
-    <Card className="border-sla">
+    <Card className="border-sla dark:bg-[#11161b]">
       <CardHeader>
         <CardTitle className="text-3xl font-bold tracking-tight">
           {restaurant.restaurantName}
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="dark:text-[#D7D7D7]">
           {restaurant.city}, {restaurant.country}
         </CardDescription>
       </CardHeader>

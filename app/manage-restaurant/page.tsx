@@ -51,9 +51,9 @@ const ManageRestaurant = () => {
 
   // Render the form with or without restaurant data
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 dark:bg-[#181c20]">
       <Tabs defaultValue="orders">
-        <TabsList className="p-10 h-full bg-gray-50">
+        <TabsList className="p-10 h-full bg-gray-50 dark:text-white dark:bg-[#181c20]">
           <TabsTrigger className="text-1xl" value="orders">
             Orders
           </TabsTrigger>
@@ -70,7 +70,7 @@ const ManageRestaurant = () => {
           }
         >
           <AnimatedCharacters
-            className="text-2xl font-bold"
+            className="text-2xl font-bold dark:text-white"
             text={`${orders?.length} active orders`}
             type="heading1"
           />

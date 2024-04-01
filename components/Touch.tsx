@@ -29,7 +29,7 @@ const Touch = () => {
 
   return (
     <div className="p-10 lg:p-20">
-      <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
+      <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground dark:text-[#D7D7D7]">
         Delicious Food
       </p>
       <AnimatedCharacters
@@ -37,7 +37,7 @@ const Touch = () => {
         text="Get in Touch"
         type="heading1"
       />
-      <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
+      <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground dark:text-[#D7D7D7]">
         We&apos;re here to answer any questions you may have.
       </p>
       <div className="flex justify-between flex-col md:flex-row">
@@ -49,10 +49,10 @@ const Touch = () => {
               text={title}
               type="heading2"
             />
-            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground">
+            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground dark:text-[#D7D7D7]">
               {description}
             </p>
-            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
+            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline dark:text-[#fff]">
               {contact}
             </p>
           </div>

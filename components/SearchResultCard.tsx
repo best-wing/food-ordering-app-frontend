@@ -53,7 +53,7 @@ const SearchResultCard = ({ restaurant }: Props) => {
           text={restaurant.restaurantName}
           type="heading1"
         />
-        <div id="card-content" className="flex flex-col gap-2 md:gap-5">
+        <div id="card-content" className="flex flex-col gap-2 md:gap-3">
           <div>
             <div className="flex flex-row flex-wrap">
             <p className="mr-1">Cuisines: </p>
@@ -74,7 +74,7 @@ const SearchResultCard = ({ restaurant }: Props) => {
               </p>
             </div>
           </div>
-          <div className="flex gap-2 md:gap-5 flex-col">
+          <div className="flex gap-2 flex-col">
             <div className="flex items-center gap-1 text-green-600">
               <Clock className="text-green-600" />
               {restaurant.estimatedDeliveryTime} mins

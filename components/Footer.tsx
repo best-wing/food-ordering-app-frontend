@@ -29,18 +29,15 @@ const Footer = () => {
   const socialIcons = [
     {
       icon: FaTwitter,
-      colorClasses:
-        "text-[#222] hover:text-[#000] dark:text-[#d3d3d3] dark:hover:text-[#fff]",
+      colorClasses: "text-[#222] hover:text-[#000]",
     },
     {
       icon: FaFacebookSquare,
-      colorClasses:
-        "text-[#222] hover:text-[#000] dark:text-[#d3d3d3] dark:hover:text-[#fff]",
+      colorClasses: "text-[#222] hover:text-[#000]",
     },
     {
       icon: FaInstagram,
-      colorClasses:
-        "text-[#222] hover:text-[#000] dark:text-[#d3d3d3] dark:hover:text-[#fff]",
+      colorClasses: "text-[#222] hover:text-[#000]",
     },
   ];
 
@@ -55,24 +52,24 @@ const Footer = () => {
             <h1 className="font-bold text-[#2F4F4F] dark:text-white md:text-[30px] lg:text-[17px] xl:text-[22px]">
               Address:
             </h1>
-            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
+            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline dark:text-[#D7D7D7]">
               123 Main St, Sydney NSW 2000, Australia
             </p>
           </div>
           <h1 className="font-bold text-[#2F4F4F] dark:text-white md:text-[30px] lg:text-[17px] xl:text-[22px]">
             Contact:
           </h1>
-          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
+          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline dark:text-[#D7D7D7]">
             +1 (555) 123-4567
           </p>
-          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline">
+          <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline dark:text-[#D7D7D7]">
             hello@bitez.com
           </p>
           <div className="flex gap-x-5 mt-5">
             {socialIcons.map((Icon, index) => (
               <Icon.icon
                 key={index}
-                className={`${Icon.colorClasses} cursor-pointer font-bold text-[25px]`}
+                className={`${Icon.colorClasses} cursor-pointer font-bold text-[25px] dark:text-white`}
               />
             ))}
           </div>
@@ -88,7 +85,7 @@ const Footer = () => {
                 <Link
                   key={linkIndex}
                   href={link.href}
-                  className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline hover:text-orange-500"
+                  className="text-[0.8rem] md:text-[1rem] text-muted-foreground underline-offset-1 underline  hover:text-orange-500 dark:hover:text-orange-500 dark:text-[#D7D7D7]"
                 >
                   {link.label}
                 </Link>
@@ -99,7 +96,7 @@ const Footer = () => {
       </div>
       <hr className="mt-20" />
       <div className="flex justify-between w-full xs:flex-col md:flex-row md:items-center py-10 gap-y-3">
-        <p className="md:text-[16px] xs:text-[12px] sm:text-[13px] text-[#222] dark:text-[#d3d3d3] cursor-pointer">
+        <p className="md:text-[16px] xs:text-[12px] sm:text-[13px] text-[#222] dark:text-white">
           © 2024 BiteZ. All rights reserved.
         </p>
       </div>

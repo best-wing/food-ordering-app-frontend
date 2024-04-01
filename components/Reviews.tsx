@@ -23,7 +23,7 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <div className="p-10 lg:p-20">
+    <div className="p-10 lg:p-20 dark:bg-[#11161b]">
       <AnimatedCharacters
         className="text-3xl font-bold"
         text="Customer Reviews"
@@ -42,20 +42,20 @@ const Reviews = () => {
                 <IoStar className="text-orange-500 text-2xl" key={index} />
               ))}
             </div>
-            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground md:w-[80%]">
+            <p className="text-[0.8rem] md:text-[1rem] text-muted-foreground md:w-[80%] dark:text-[#D7D7D7]">
               {review.text}
             </p>
             <div className="flex gap-2 md:gap-5 items-center">
-              <div className="flex gap-2">
+              <div className="flex gap-2 dark:text-[#fff]">
                 <Avatar>
                   <AvatarFallback>{review.avatarLetters}</AvatarFallback>
                 </Avatar>
-                <div className="text-[0.8rem] md:text-[0.9rem] text-muted-foreground w-[120px] md:w-full">
+                <div className="text-[0.8rem] md:text-[0.9rem] text-muted-foreground w-[120px] md:w-full dark:text-[#D7D7D7]">
                   <p>{review.name}</p>
                   <p>{review.role}</p>
                 </div>
               </div>
-              <div className="bg-[#222] h-16 w-[2px]" />
+              <div className="bg-[#222] dark:bg-[#fff] h-16 w-[2px]" />
               <p className="text-[1rem] text-orange-500 font-bold">BiteZ.com</p>
             </div>
           </div>

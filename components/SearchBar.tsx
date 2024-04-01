@@ -98,7 +98,7 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
           onClick={handleReset}
           type="button"
           variant="outline"
-          className="rounded-full p-2 md:p-4 text-sm md:text-lg"
+          className="rounded-full p-2 md:p-4 text-sm md:text-base dark:text-white"
         >
           Reset
         </Button>

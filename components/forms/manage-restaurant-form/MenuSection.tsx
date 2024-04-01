@@ -27,11 +27,11 @@ const MenuSection = () => {
     <div className="space-y-2">
       <div>
         <AnimatedCharacters
-          className="text-2xl font-bold"
+          className="text-2xl font-bold dark:text-white"
           text="Menu"
           type="heading1"
         />
-        <FormDescription>
+        <FormDescription className="dark:text-[#D7D7D7]">
           Create your menu and give each item a name and a price and a image
         </FormDescription>
       </div>
@@ -39,7 +39,7 @@ const MenuSection = () => {
         control={control}
         name="menuItems"
         render={() => (
-          <FormItem className="flex flex-col gap-2">
+          <FormItem className="flex flex-col gap-2 dark:text-white">
             {fields.map((field, index) => (
               <MenuItemInput
                 key={field.id}

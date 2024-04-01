@@ -58,7 +58,7 @@ const CusineFilter = ({
                   className={`flex flex-1 items-center cursor-pointer text-sm rounded-full px-4 py-3 font-semibold ${
                     isSelected
                       ? "border border-r-green-500 text-green-600"
-                      : "border border-slate-300"
+                      : "border border-slate-300 dark:border-slate-500"
                   }`}
                 >
                   {isSelected && <Check size={20} strokeWidth={3} />}
