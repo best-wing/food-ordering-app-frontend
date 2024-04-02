@@ -39,7 +39,7 @@ const Hero = () => {
           width={2000}
           height={2000}
         />
-        <div className="flex relative p-5 md:p-20 w-full flex-col lg:flex-row gap-10 justify-center ">
+        <div className="flex relative p-5 md:p-20 w-full flex-col lg:flex-row gap-10 items-center justify-center ">
           <div className="flex flex-col gap-y-5 xl:w-1/2">
             <AnimatedCharacters
               className="text-[0.8rem] md:text-[1rem] text-[#e6e6e6]"
