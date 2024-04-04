@@ -54,7 +54,7 @@ export const useGetMyUser = () => {
   };
 };
 
-export const userCreateMyUser = () => {
+export const useCreateMyUser = () => {
   const { getAccessTokenSilently } = useAuth0();
 
   const createMyUserRequest = async (user: CreateUserRequest) => {
@@ -87,6 +87,7 @@ export const userCreateMyUser = () => {
     isSuccess,
   };
 };
+
 
 export const useUpdateMyUser = () => {
   const { getAccessTokenSilently } = useAuth0();

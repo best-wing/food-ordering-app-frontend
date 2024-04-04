@@ -1,5 +1,5 @@
 "use client";
-import { userCreateMyUser } from "@/api/MyUserApi";
+import { useCreateMyUser } from "@/api/MyUserApi";
 import { AppState, useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
@@ -7,7 +7,7 @@ import { Loader } from "lucide-react";
 
 const AuthCallback = () => {
   const { user } = useAuth0();
-  const { createUser } = userCreateMyUser();
+  const { createUser } = useCreateMyUser();
   const navigate = useRouter();
   const hasCreatedUser = useRef(false);
 

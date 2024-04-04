@@ -1,4 +1,5 @@
 "use client";
+import { useCreateMyUser } from "@/api/MyUserApi";
 import { useCreateCheckoutSession } from "@/api/OrderApi";
 import { useGetRestaurant } from "@/api/RestaurantApi";
 import CheckoutButton from "@/components/CheckoutButton";
@@ -9,10 +10,10 @@ import { UserFormData } from "@/components/forms/user-profile-form/UserProfileFo
 import { MenuItem as MenuItemType } from "@/components/types";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardFooter } from "@/components/ui/card";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Loader } from "lucide-react";
-import Image from "next/image";
 import { useParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export type CartItem = {
   _id: string;
@@ -22,6 +23,11 @@ export type CartItem = {
 };
 
 const DetailPage = () => {
+
+  const { user } = useAuth0();
+  const { createUser } = useCreateMyUser();
+  const hasCreatedUser = useRef(false);
+
   const { restaurantId } = useParams();
   const { restaurant, isLoading } = useGetRestaurant(restaurantId as string);
   const { createCheckoutSession, isLoading: isCheckoutLoading } = useCreateCheckoutSession()
@@ -32,6 +38,13 @@ const DetailPage = () => {
     }
     return [];
   });
+
+  useEffect(() => {
+    if (user?.sub && user?.email && !hasCreatedUser.current) {
+      createUser({ auth0Id: user.sub, email: user.email });
+      hasCreatedUser.current = true;
+    }
+  }, [createUser, user]);
   
 
   const addToCart = (menuItem: MenuItemType) => {
