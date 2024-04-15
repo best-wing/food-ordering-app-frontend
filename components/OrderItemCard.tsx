@@ -44,7 +44,7 @@ const OrderItemCard = ({ order }: Props) => {
     <Card>
       <CardHeader>
         <CardTitle className="grid md:grid-cols-4 gap-4 justify-between mb-3">
-          <div className="font-bold text-[#11142D]">
+          <div className="font-bold text-[#11142D] dark:text-[#fff]">
             Customer Name:
             <span className="text-[0.9rem] text-muted-foreground font-normal ml-1">
               {order.deliveryDetails.name}

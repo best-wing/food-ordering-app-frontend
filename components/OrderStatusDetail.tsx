@@ -12,7 +12,7 @@ const OrderStatusDetail = ({ order }: Props) => {
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold text-[#11142D] dark:text-white">Delivering to:</h2>
         <div className="flex flex-col gap-y-2">
-          <span className="text-[1rem] text-[#727272]">
+          <span className="text-[1rem] text-[#727272] dark:text-[#D7D7D7]">
             <span className="font-bold text-[#11142D] dark:text-white">Name:</span>{" "}
             {order.deliveryDetails.name}
           </span>
