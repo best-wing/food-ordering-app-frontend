@@ -8,7 +8,7 @@ import Reviews from "@/components/Reviews";
 import Touch from "@/components/Touch";
 import { useGetRestaurant } from "@/api/RestaurantApi";
 
-const page = () => {
+const Home = () => {
   const { restaurant } = useGetRestaurant();
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;
