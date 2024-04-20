@@ -13,10 +13,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = createMetadata({
   title: {
-    absolute: "Islam Belamri",
-    template: "Islam Belamri | %s",
+    absolute: "BiteZ",
+    template: "BiteZ | %s",
   },
-  description: "This is my professional portfolio site.",
+  description: "This is my professional food ordering app",
 });
 
 export default function RootLayout({

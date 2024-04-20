@@ -1,6 +1,6 @@
 import type { Metadata } from "next/types";
 
-export const baseUrl = "https://portfolio-new-self-sigma.vercel.app";
+export const baseUrl = "https://mern-food-ordering-app-frontend-one.vercel.app";
 
 export function createMetadata(override: Metadata): Metadata {
   return {
@@ -15,7 +15,7 @@ export function createMetadata(override: Metadata): Metadata {
           alt: "banner",
           width: "1200",
           height: "630",
-          url: "/banner.png",
+          url: "/banner.jpg",
         },
       ],
       siteName: "Portfolio",
@@ -30,7 +30,7 @@ export function createMetadata(override: Metadata): Metadata {
           alt: "banner",
           width: "1200",
           height: "630",
-          url: "/banner.png",
+          url: "/banner.jpg",
         },
       ],
       ...override.twitter,
