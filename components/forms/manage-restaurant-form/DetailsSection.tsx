@@ -33,7 +33,7 @@ function DetailsSection() {
           <FormItem>
             <FormLabel className="dark:text-white">Name</FormLabel>
             <FormControl>
-              <Input {...field} className="bg-white" />
+              <Input {...field} className="bg-white dark:text-black" />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -48,7 +48,7 @@ function DetailsSection() {
             <FormItem className="flex-1">
               <FormLabel className="dark:text-white">City</FormLabel>
               <FormControl>
-                <Input {...field} className="bg-white" />
+                <Input {...field} className="bg-white dark:text-black" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -61,7 +61,7 @@ function DetailsSection() {
             <FormItem className="flex-1">
               <FormLabel className="dark:text-white">Country</FormLabel>
               <FormControl>
-                <Input {...field} className="bg-white" />
+                <Input {...field} className="bg-white dark:text-black" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -76,7 +76,7 @@ function DetailsSection() {
           <FormItem className="mx-w-[25%]">
             <FormLabel className="dark:text-white">Delivery price (£)</FormLabel>
             <FormControl>
-              <Input {...field} className="bg-white" placeholder="1.50" />
+              <Input {...field} className="bg-white dark:text-black" placeholder="1.50" />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -89,7 +89,7 @@ function DetailsSection() {
           <FormItem className="mx-w-[25%]">
             <FormLabel className="dark:text-white">Estimated Delivery Time (minutes)</FormLabel>
             <FormControl>
-              <Input {...field} className="bg-white" placeholder="30" />
+              <Input {...field} className="bg-white dark:text-black" placeholder="30" />
             </FormControl>
             <FormMessage />
           </FormItem>
